@@ -354,3 +354,33 @@ span {
   font-size: 2.4rem;
   color: var(--second-bg-color);
 }
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem 9%;
+  background: var(--bg-color);
+  display: flex;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Toggle switch */
+.toggle-switch {
+  margin-left: auto;
+  margin-right: 2rem;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-switch input {
+  display: none;
+}
+
+.toggle-switch label {
+  font-size: 2.4rem;
+  cursor: pointer;
+  color: var(--text-color);
+  transition: color 0.3s ease;
+}
