@@ -1,3 +1,11 @@
+function scrollToSection() {
+  const section = document.getElementById("section-2");
+  const offset = section.offsetTop;
+  window.scrollTo({
+    top: offset,
+    behavior: "smooth"
+  });
+}
 // Theme toggle
 const toggle = document.getElementById("toggle-mode");
 toggle.addEventListener("click", () => {
