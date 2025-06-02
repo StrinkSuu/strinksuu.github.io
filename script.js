@@ -7,3 +7,9 @@ function scrollToSection() {
     behavior: "smooth"
   });
 }
+<script>
+  const toggle = document.getElementById('mode-toggle');
+  toggle.addEventListener('change', () => {
+    document.body.classList.toggle('light-mode');
+  });
+</script>
