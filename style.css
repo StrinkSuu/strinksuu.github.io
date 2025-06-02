@@ -1,99 +1,82 @@
-/* Import Poppins font */
+/* =======================
+   Fonts & Resets
+======================= */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
-:root {
-  --bg-dark: #1f242d;
-  --bg-light: #f5f7fa;
-  --text-dark: #fff;
-  --text-light: #1f242d;
-  --primary-color: #0ef;
-  --secondary-bg: #323946;
-  --hover-color: #0cc;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html {
   font-size: 62.5%; /* 1rem = 10px */
   scroll-behavior: smooth;
-  box-sizing: border-box;
-}
-
-*, *::before, *::after {
-  box-sizing: inherit;
 }
 
 body {
   font-family: 'Poppins', sans-serif;
   font-size: 1.4rem; /* 14px */
   line-height: 1.6;
-  background-color: var(--bg-dark);
-  color: var(--text-dark);
-  margin: 0;
-  padding: 0;
+  background-color: #1f242d;
+  color: #f0f0f0;
   transition: background-color 0.3s ease, color 0.3s ease;
+  min-height: 100vh;
 }
 
+/* === Light Mode === */
 body.light {
-  background-color: var(--bg-light);
-  color: var(--text-light);
+  background-color: #f5f7fa;
+  color: #1f242d;
 }
 
-/* Header */
+/* =======================
+   Header
+======================= */
 .header {
   position: sticky;
   top: 0;
-  background-color: var(--secondary-bg);
+  background-color: #323946;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  z-index: 100;
+  padding: 1.2rem 2rem;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
   transition: background-color 0.3s ease;
 }
 
 body.light .header {
   background-color: #ddd;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .logo {
   font-weight: 700;
   font-size: 1.8rem;
-  color: var(--primary-color);
-  text-decoration: none;
-  cursor: default;
+  color: #0ef;
   user-select: none;
+  text-decoration: none;
 }
 
 .navbar a {
-  color: var(--text-dark);
-  text-decoration: none;
+  color: #f0f0f0;
   margin-left: 2rem;
+  font-weight: 600;
+  text-decoration: none;
   font-size: 1.4rem;
-  font-weight: 500;
   transition: color 0.3s ease;
 }
 
 body.light .navbar a {
-  color: var(--text-light);
+  color: #1f242d;
 }
 
-.navbar a:hover,
-.navbar a.active {
-  color: var(--hover-color);
+.navbar a:hover {
+  color: #0cc;
 }
 
-/* Menu icon (hidden on desktop, can be styled for mobile) */
-#menu-icon {
-  display: none;
-  font-size: 2.8rem;
-  color: var(--text-dark);
-  cursor: pointer;
-}
-
-body.light #menu-icon {
-  color: var(--text-light);
-}
-
-/* Dark/Light Toggle Switch */
+/* Dark/Light Toggle */
 .toggle-switch {
   display: flex;
   align-items: center;
@@ -106,8 +89,8 @@ body.light #menu-icon {
 .toggle-switch label {
   cursor: pointer;
   font-size: 1.8rem;
+  color: #0ef;
   user-select: none;
-  color: var(--primary-color);
   transition: color 0.3s ease;
 }
 
@@ -115,51 +98,49 @@ body.light .toggle-switch label {
   color: #555;
 }
 
-/* Sections */
+/* =======================
+   Sections
+======================= */
 section {
   max-width: 900px;
-  margin: 6rem auto 4rem auto;
+  margin: 6rem auto 4rem;
   padding: 0 2rem;
 }
 
 /* Headings */
 h1, h2, h3 {
-  margin-bottom: 1rem;
   font-weight: 700;
+  margin-bottom: 1rem;
 }
 
 h1 {
-  font-size: 2.8rem;
-  line-height: 1.2;
+  font-size: 3.2rem;
 }
 
 h2 {
   font-size: 2.4rem;
-  color: var(--primary-color);
-  margin-bottom: 3rem;
+  color: #0ef;
 }
 
 h3 {
   font-size: 1.8rem;
-  margin-bottom: 1.2rem;
 }
 
 span {
-  color: var(--primary-color);
+  color: #0ef;
 }
 
 /* Paragraph */
 p {
   font-size: 1.4rem;
-  margin-bottom: 1.8rem;
-  line-height: 1.5;
+  margin-bottom: 2rem;
+  color: inherit;
 }
 
-/* Home Section */
+/* =======================
+   Home Section
+======================= */
 .home {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
   margin-top: 10rem;
 }
@@ -170,97 +151,92 @@ p {
   margin-bottom: 0.5rem;
 }
 
-.home-content h1 {
-  font-weight: 700;
-  font-size: 3.2rem;
-  margin-bottom: 0.5rem;
-}
-
 .home-content h3 span {
+  color: #0ef;
   font-weight: 600;
-  color: var(--primary-color);
 }
 
-/* Social Media Icons */
 .social-media {
   margin-top: 2rem;
 }
 
 .social-media a {
   font-size: 2.4rem;
-  color: var(--primary-color);
-  margin-right: 1.5rem;
+  color: #0ef;
+  margin: 0 1rem;
   transition: color 0.3s ease;
   text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .social-media a:hover {
-  color: var(--hover-color);
+  color: #0cc;
 }
 
-/* About Section */
+/* =======================
+   About Section
+======================= */
 .about-content {
   max-width: 600px;
   margin: 0 auto;
 }
 
-/* Services Section */
+/* =======================
+   Services Section
+======================= */
 .services-container {
   display: flex;
-  justify-content: center;
-  gap: 3rem;
+  gap: 2rem;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .services-box {
-  background-color: var(--secondary-bg);
-  padding: 2.5rem 2rem;
-  border-radius: 1.2rem;
-  text-align: center;
+  background-color: #323946;
+  padding: 2rem;
+  border-radius: 1rem;
   width: 280px;
-  box-shadow: 0 0 15px rgba(14, 238, 255, 0.2);
+  text-align: center;
+  box-shadow: 0 0 15px rgba(14,238,255,0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: default;
 }
 
 .services-box i {
-  font-size: 4rem;
-  color: var(--primary-color);
+  font-size: 3.6rem;
+  color: #0ef;
   margin-bottom: 1rem;
 }
 
 .services-box h3 {
   font-size: 1.8rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
 }
 
 .services-box p {
   font-size: 1.4rem;
-  line-height: 1.4;
   color: #ccc;
 }
 
 .services-box:hover {
   transform: translateY(-8px);
-  box-shadow: 0 0 20px var(--primary-color);
+  box-shadow: 0 0 20px #0ef;
 }
 
-/* Portfolio Section */
+/* =======================
+   Portfolio Section
+======================= */
 .portfolio-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2.5rem;
+  gap: 2rem;
 }
 
 .portfolio-box {
   position: relative;
-  border-radius: 1.2rem;
+  border-radius: 1rem;
   overflow: hidden;
-  box-shadow: 0 0 15px rgba(14, 238, 255, 0.2);
   cursor: pointer;
+  box-shadow: 0 0 15px rgba(14,238,255,0.15);
   transition: box-shadow 0.3s ease;
 }
 
@@ -269,7 +245,7 @@ p {
   height: auto;
   display: block;
   transition: transform 0.5s ease;
-  border-radius: 1.2rem;
+  border-radius: 1rem;
 }
 
 .portfolio-box:hover img {
@@ -281,12 +257,12 @@ p {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(14, 238, 255, 0.9), transparent);
-  color: #fff;
-  padding: 2rem;
+  background: linear-gradient(to top, rgba(14,238,255,0.9), transparent);
+  color: white;
+  padding: 1.5rem 2rem;
   opacity: 0;
   transition: opacity 0.4s ease;
-  border-radius: 0 0 1.2rem 1.2rem;
+  border-radius: 0 0 1rem 1rem;
 }
 
 .portfolio-box:hover .portfolio-layer {
@@ -307,22 +283,24 @@ p {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  background-color: #fff;
-  color: var(--secondary-bg);
-  width: 40px;
-  height: 40px;
+  background-color: white;
+  color: #323946;
+  width: 38px;
+  height: 38px;
   border-radius: 50%;
+  font-size: 1.6rem;
   text-decoration: none;
-  font-size: 1.8rem;
   transition: background-color 0.3s ease;
 }
 
 .portfolio-layer a:hover {
-  background-color: var(--primary-color);
-  color: #fff;
+  background-color: #0ef;
+  color: white;
 }
 
-/* Contact Section */
+/* =======================
+   Contact Section
+======================= */
 .contact {
   max-width: 700px;
   margin: 0 auto;
@@ -350,20 +328,20 @@ form {
   font-size: 1.4rem;
   border-radius: 8px;
   border: none;
-  background-color: var(--secondary-bg);
-  color: var(--text-dark);
+  background-color: #323946;
+  color: #f0f0f0;
   transition: background-color 0.3s ease;
 }
 
 body.light .input-box input {
   background-color: #e6e9f0;
-  color: var(--text-light);
+  color: #1f242d;
 }
 
 .input-box input:focus {
   outline: none;
-  background-color: var(--primary-color);
-  color: var(--bg-dark);
+  background-color: #0ef;
+  color: #1f242d;
 }
 
 textarea {
@@ -372,8 +350,8 @@ textarea {
   font-size: 1.4rem;
   border-radius: 8px;
   border: none;
-  background-color: var(--secondary-bg);
-  color: var(--text-dark);
+  background-color: #323946;
+  color: #f0f0f0;
   resize: vertical;
   min-height: 120px;
   transition: background-color 0.3s ease;
@@ -381,35 +359,87 @@ textarea {
 
 body.light textarea {
   background-color: #e6e9f0;
-  color: var(--text-light);
+  color: #1f242d;
 }
 
 textarea:focus {
   outline: none;
-  background-color: var(--primary-color);
-  color: var(--bg-dark);
+  background-color: #0ef;
+  color: #1f242d;
 }
 
 .btn {
-  display: inline-block;
-  background-color: var(--primary-color);
-  color: var(--bg-dark);
+  background-color: #0ef;
+  color: #1f242d;
   padding: 1rem 2.5rem;
   font-size: 1.6rem;
   font-weight: 600;
   border: none;
   border-radius: 30px;
   cursor: pointer;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
+  transition: background-color 0.3s ease;
+  display: inline-block;
   user-select: none;
 }
 
 .btn:hover {
-  background-color: var(--hover-color);
-  box-shadow: 0 0 10px var(--primary-color);
+  background-color: #0cc;
 }
 
-/* Footer */
+/* =======================
+   Footer
+======================= */
 .footer {
-  background-color: var(--
+  background-color: #323946;
+  color: #ccc;
+  text-align: center;
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto 2rem;
+  border-radius: 1rem;
+}
+
+body.light .footer {
+  background-color: #ddd;
+  color: #555;
+}
+
+.footer-text p {
+  font-size: 1.4rem;
+}
+
+.footer-iconTop a {
+  color: #0ef;
+  font-size: 2.4rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-iconTop a:hover {
+  color: #0cc;
+}
+
+/* =======================
+   Responsive (basic)
+======================= */
+@media screen and (max-width: 768px) {
+  .services-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .input-box {
+    flex-direction: column;
+  }
+
+  .input-box input {
+    flex: 1 1 100%;
+  }
+
+  .navbar a {
+    margin-left: 1rem;
+  }
+}
