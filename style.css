@@ -1,26 +1,27 @@
-/* ========== Global Reset ========== */
+/* Reset & Base */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  font-family: 'Poppins', sans-serif;
 }
 
 :root {
   --main-color: #0ef;
   --bg-color: #1f242d;
   --text-color: #fff;
+  --sub-text-color: #ccc;
+  --section-bg: #323946;
   --light-bg: #f5f5f5;
   --light-text: #1f1f1f;
   --transition: 0.3s ease;
-  --font: 'Poppins', sans-serif;
 }
 
 body {
-  font-family: var(--font);
-  font-size: 16px;
   background: var(--bg-color);
   color: var(--text-color);
+  font-size: 16px;
   transition: var(--transition);
 }
 
@@ -29,17 +30,17 @@ body.light {
   color: var(--light-text);
 }
 
-/* ========== Header ========== */
+/* Header */
 .header {
   position: sticky;
   top: 0;
-  background: #323946;
+  width: 100%;
+  background: var(--section-bg);
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
 }
 
 body.light .header {
@@ -47,8 +48,8 @@ body.light .header {
 }
 
 .logo {
-  color: var(--main-color);
   font-size: 1.5rem;
+  color: var(--main-color);
   font-weight: 700;
   text-decoration: none;
 }
@@ -68,7 +69,7 @@ body.light .navbar a {
   color: var(--light-text);
 }
 
-/* Toggle */
+/* Toggle Switch */
 .toggle-switch input {
   display: none;
 }
@@ -79,36 +80,25 @@ body.light .navbar a {
   color: var(--main-color);
 }
 
-/* ========== Sections ========== */
+/* Section General */
 section {
   padding: 4rem 2rem;
-  max-width: 1000px;
-  margin: auto;
+  text-align: center;
 }
 
 .heading {
   font-size: 2rem;
   margin-bottom: 2rem;
-  text-align: center;
 }
 
 .heading span {
   color: var(--main-color);
 }
 
-h1, h2, h3 {
-  font-weight: 600;
-  margin-bottom: 1rem;
-}
-
-/* ========== Home Section ========== */
-.home {
-  text-align: center;
-  padding-top: 5rem;
-}
-
+/* Home */
 .home-content h1 {
   font-size: 2.5rem;
+  margin: 1rem 0;
 }
 
 .home-content h3 {
@@ -116,28 +106,29 @@ h1, h2, h3 {
   color: var(--main-color);
 }
 
+.home-content span {
+  color: var(--main-color);
+}
+
 .social-media a {
   font-size: 2rem;
   margin: 0 0.5rem;
   color: var(--main-color);
-  transition: var(--transition);
+  transition: transform 0.3s;
 }
 
 .social-media a:hover {
-  color: #0cc;
+  transform: scale(1.2);
 }
 
-/* ========== About Section ========== */
-.about-content {
-  text-align: center;
-}
-
+/* About */
 .about-content p {
   max-width: 600px;
-  margin: auto;
+  margin: 0 auto;
+  font-size: 1rem;
 }
 
-/* ========== Services Section ========== */
+/* Services */
 .services-container {
   display: flex;
   flex-wrap: wrap;
@@ -146,30 +137,25 @@ h1, h2, h3 {
 }
 
 .services-box {
-  background: #323946;
-  padding: 1.5rem;
-  border-radius: 10px;
+  background: var(--section-bg);
+  padding: 2rem;
   width: 260px;
-  text-align: center;
+  border-radius: 10px;
   transition: var(--transition);
 }
 
 .services-box:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 10px var(--main-color);
+  box-shadow: 0 0 15px var(--main-color);
 }
 
 .services-box i {
-  font-size: 2rem;
-  color: var(--main-color);
+  font-size: 2.5rem;
   margin-bottom: 1rem;
+  color: var(--main-color);
 }
 
-body.light .services-box {
-  background: #eee;
-}
-
-/* ========== Portfolio Section ========== */
+/* Portfolio */
 .portfolio-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -180,64 +166,42 @@ body.light .services-box {
   position: relative;
   overflow: hidden;
   border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  background: var(--section-bg);
 }
 
 .portfolio-box img {
   width: 100%;
-  display: block;
+  height: auto;
   border-radius: 10px;
-  transition: var(--transition);
-}
-
-.portfolio-box:hover img {
-  transform: scale(1.05);
 }
 
 .portfolio-layer {
   position: absolute;
   bottom: 0;
-  background: rgba(0, 238, 255, 0.85);
-  color: #000;
   width: 100%;
+  background: rgba(0, 238, 255, 0.85);
   padding: 1rem;
   transform: translateY(100%);
-  transition: var(--transition);
+  transition: transform 0.3s ease;
+  color: #000;
 }
 
 .portfolio-box:hover .portfolio-layer {
   transform: translateY(0%);
 }
 
-.portfolio-layer h4 {
-  font-size: 1.2rem;
-}
-
 .portfolio-layer a {
-  display: inline-block;
   margin-top: 0.5rem;
-  color: #000;
-  background: #fff;
-  padding: 0.3rem 0.6rem;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: var(--transition);
-}
-
-.portfolio-layer a:hover {
-  background: var(--main-color);
+  display: inline-block;
+  font-size: 1.5rem;
   color: #000;
 }
 
-/* ========== Contact Section ========== */
-.contact h2 {
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
+/* Contact */
 form {
   max-width: 600px;
   margin: auto;
+  text-align: left;
 }
 
 .input-box {
@@ -258,26 +222,19 @@ textarea {
   font-size: 1rem;
 }
 
-body.light input,
-body.light textarea {
-  background: #e8e8e8;
-  color: #000;
-}
-
 textarea {
   resize: vertical;
-  min-height: 120px;
+  min-height: 100px;
 }
 
 .btn {
-  display: block;
-  margin-top: 1rem;
+  display: inline-block;
   padding: 0.75rem 2rem;
   background: var(--main-color);
   color: #000;
+  font-weight: bold;
   border: none;
   border-radius: 25px;
-  font-weight: 600;
   cursor: pointer;
   transition: var(--transition);
 }
@@ -286,26 +243,20 @@ textarea {
   background: #0cc;
 }
 
-/* ========== Footer ========== */
+/* Footer */
 .footer {
+  background: var(--section-bg);
   text-align: center;
   padding: 2rem;
-  background: #323946;
-  color: #ccc;
-  font-size: 0.9rem;
+  color: var(--sub-text-color);
 }
 
 .footer-iconTop a {
-  font-size: 1.5rem;
   color: var(--main-color);
-  text-decoration: none;
+  font-size: 1.5rem;
 }
 
-.footer-iconTop a:hover {
-  color: #0cc;
-}
-
-/* ========== Responsive ========== */
+/* Responsive */
 @media (max-width: 768px) {
   .services-container {
     flex-direction: column;
