@@ -1,90 +1,100 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Amir Portfolio</title>
-<!-- Add this in the <head> of your HTML file -->
-   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="icon" href="icon.png" type="image/icon type">
-  <link href="style.css" rel="stylesheet" type="text/css" />
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Boxicons -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="icon.png" type="image/png">
 </head>
-
 <body>
-<header class="header">
-   <!-- Dark/Light Toggle Switch -->
-  <div class="toggle-switch">
-    <input type="checkbox" id="mode-toggle">
-    <label for="mode-toggle">🌙</label>
-  </div>
-  <a href="#" class="logo">Portfolio</a>
-  <i class='bx bx-menu' id="menu-icon"></i>
-  <nav class="navbar">
-    <a href="#home" onclick="scrollToSection()">Home</a>
-    <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
 
-<section class="home" id="home">
-  <div class="home-content">
-    <h3>Hello, it's me</h3>
-    <h1>Masmoudi Amir</h1>
-    <h3>And I'm a <span>Programmer</span></h3>
-    <div class="social-media">
-      <a href="https://www.facebook.com/amir.masmoudi.1610/"><i class='bx bxl-facebook-circle'></i></a>
-      <a href="https://twitter.com/Gust19275797"><i class='bx bxl-twitter'></i></a>
-      <a href="https://www.instagram.com/Amir_Kneegrow/"><i class='bx bxl-instagram'></i></a>
-    </div>
-  </div>
-</section>
+  <!-- Header -->
+  <header class="header">
+    <a href="#" class="logo">Portfolio</a>
 
-<section class="about" id="about">
-  <div class="about-content">
-    <h2 class="heading">About<span> Me</span></h2>
-    <h3>Programmer</h3>
-    <p>Hi, I'm Amir, 13 years old. I like scripting a lot, but I don't have enough time for it because I have school. I need to focus on finishing school, but I can still make you a website since I'm a web developer.</p>
-  </div>
-</section>
+    <input type="checkbox" id="dark-mode-toggle" />
+    <label for="dark-mode-toggle" class="dark-mode-label">🌙</label>
 
-<section class="services" id="services">
-  <h2 class="heading">My <span>Services</span></h2>
-  <div class="services-container">
-    <div class="services-box">
-      <i class='bx bx-code-alt bx-tada'></i>
-      <h3>Web Development</h3>
-      <p>Any website, any type — tell me what you want and I'll make it.</p>
-    </div>
-    <div class="services-box">
-      <i class='bx bxs-paint bx-tada'></i>
-      <h3>Graphic Design</h3>
-      <p>Designs only for icons.</p>
-    </div>
-  </div>
-</section>
+    <i class='bx bx-menu' id="menu-icon"></i>
+    <nav class="navbar">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-<section class="portfolio" id="portfolio">
-  <h2 class="heading">Latest <span>Project</span></h2>
-  <div class="portfolio-container">
-    <div class="portfolio-box">
-      <img src="Portfolio 1.jpg" alt="">
-      <div class="portfolio-layer">
-        <h4>Scratch</h4>
-        <p>Let's get scratching</p>
-        <a href="https://scratch.mit.edu/users/amychiprincessio/"><i class='bx bx-link-external bx-tada'></i></a>
+  <!-- Home Section -->
+  <section class="home" id="home">
+    <div class="home-content">
+      <h3>Hello, it's me</h3>
+      <h1>Masmoudi Amir</h1>
+      <h3>And I'm a <span class="typing-text">Programmer</span></h3>
+      <div class="social-media">
+        <a href="https://www.facebook.com/amir.masmoudi.1610/"><i class='bx bxl-facebook-circle'></i></a>
+        <a href="https://twitter.com/Gust19275797"><i class='bx bxl-twitter'></i></a>
+        <a href="https://www.instagram.com/Amir_Kneegrow/"><i class='bx bxl-instagram'></i></a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
- <section class="contact" id="contact">
-    <h2>Contact <span>Me</span></h2>
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="about-content">
+      <h2 class="heading">About <span>Me</span></h2>
+      <h3>Programmer</h3>
+      <p>Hi, I'm Amir, 13 years old. I love scripting and web development. Even with school keeping me busy, I still create websites in my free time!</p>
+    </div>
+  </section>
 
-    <form action="https://formspree.io/f/xwpbkqnb" method="POST" id="contact-form">
+  <!-- Services Section -->
+  <section class="services" id="services">
+    <h2 class="heading">My <span>Services</span></h2>
+    <div class="services-container">
+      <div class="services-box">
+        <i class='bx bx-code-alt bx-tada'></i>
+        <h3>Web Development</h3>
+        <p>I build any kind of website — just tell me what you need!</p>
+      </div>
+      <div class="services-box">
+        <i class='bx bxs-paint bx-tada'></i>
+        <h3>Graphic Design</h3>
+        <p>I can design clean icons and assets for your brand.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section class="portfolio" id="portfolio">
+    <h2 class="heading">Latest <span>Project</span></h2>
+    <div class="portfolio-container">
+      <div class="portfolio-box">
+        <img src="Portfolio 1.jpg" alt="Project Thumbnail" />
+        <div class="portfolio-layer">
+          <h4>Scratch Project</h4>
+          <p>Let’s get scratching!</p>
+          <a href="https://scratch.mit.edu/users/amychiprincessio/"><i class='bx bx-link-external bx-tada'></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <h2 class="heading">Contact <span>Me</span></h2>
+    <form action="https://formspree.io/f/xwpbkqnb" method="POST">
       <div class="input-box">
         <input type="text" name="name" placeholder="Full Name" required />
         <input type="email" name="email" placeholder="Email Address" required />
@@ -96,20 +106,19 @@
       <textarea name="message" placeholder="Your message" required></textarea>
       <input type="submit" value="Send Message" class="btn" />
     </form>
-
-    <p id="form-message" class="form-message"></p>
   </section>
 
-<footer class="footer"> 
-  <div class="footer-text">
-    <p>Copyright &copy; 2025 by Amir Masmoudi</p>
-  </div>
-  <div class="footer-iconTop">
-    <a href="#home"><i class='bx bx-up-arrow-alt bx-flashing'></i></a>
-  </div>
-</footer>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-text">
+      <p>&copy; 2025 Masmoudi Amir. All rights reserved.</p>
+    </div>
+    <div class="footer-iconTop">
+      <a href="#home"><i class='bx bx-up-arrow-alt bx-flashing'></i></a>
+    </div>
+  </footer>
 
-<script src="script.js"></script>
+  <!-- Script -->
+  <script src="script.js"></script>
 </body>
-
 </html>
